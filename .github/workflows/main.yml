@@ -1,4 +1,4 @@
-            - name: ali-oss-uploader
+- name: ali-oss-uploader
   # You may pin to the exact commit or the version.
   # uses: leftsky/ali-oss-upload-action@48c9cabd728375d5203473ede77f4a9f6f12748f
   uses: leftsky/ali-oss-upload-action@v1.0.1
