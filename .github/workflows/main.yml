@@ -8,23 +8,40 @@ jobs:
     name: Release on GitHub
     runs-on: ubuntu-latest
     steps:
-      - name: ali-oss-uploader
-        # You may pin to the exact commit or the version.
-        # uses: leftsky/ali-oss-upload-action@48c9cabd728375d5203473ede77f4a9f6f12748f
-        uses: leftsky/ali-oss-upload-action@v1.0.1
-        with:
-          # 阿里云OSS地域
-          region: # optional
-          # 阿里云OSS Endpoint
-          endpoint: # optional
-          # 阿里云OSS AccessKeyId
-          key-id: 
-          # 阿里云OSS AccessKeySecret
-          key-secret: 
-          # 阿里云OSS Bucket
-          bucket: 
-          # 需要上传的文件或文件夹
-          dir: 
-          # 上传到OSS的目标文件夹
-          target-dir: 
+        - name: aliyun-oss-website-action
+          # You may pin to the exact commit or the version.
+          # uses: fangbinwei/aliyun-oss-website-action@83a47e5e40b4185c8d221148bd314bb57015d7e4
+          uses: fangbinwei/aliyun-oss-website-action@v1.4.1
+          with:
+            # Folder which contains the website files
+            folder: 
+            # Exclude file from the folder
+            exclude: # optional
+            # Aliyun OSS accessKeyId.
+            accessKeyId: 
+            # Aliyun OSS accessKeySecret.
+            accessKeySecret: 
+            # Aliyun OSS bucket instance.
+            bucket: 
+            # OSS region domain
+            endpoint: 
+            # `true` to identify the endpoint is your custom domain.
+            cname: # optional, default is false
+            # `true` to skip setting static pages related configuration. `indexPage`, `notFoundPage` will not be used.
+            skipSetting: # optional, default is false
+            # Save info of uploaded files to increase next upload speed
+            incremental: # optional, default is true
+            # index page
+            indexPage: # optional, default is index.html
+            # not found page
+            notFoundPage: # optional, default is 404.html
+            # Cache-Control for HTML
+            htmlCacheControl: # optional, default is no-cache
+            # Cache-Control for image
+            imageCacheControl: # optional, default is max-age=864000
+            # Cache-Control for PDF
+            pdfCacheControl: # optional, default is max-age=2592000
+            # Cache-Control for other files
+            otherCacheControl: # optional, default is max-age=2592000
+                  
           
