@@ -14,34 +14,15 @@ jobs:
           uses: fangbinwei/aliyun-oss-website-action@v1.4.1
           with:
             # Folder which contains the website files
-            folder: 
-            # Exclude file from the folder
-            exclude: # optional
+            folder: .
             # Aliyun OSS accessKeyId.
-            accessKeyId: 
+            accessKeyId: ${{secrets.ACCESS_KEY}}
             # Aliyun OSS accessKeySecret.
-            accessKeySecret: 
+            accessKeySecret: ${{secrets.ACCESS_SECRET}}
             # Aliyun OSS bucket instance.
-            bucket: 
+            bucket: ${{secrets.BUCKET}}
             # OSS region domain
-            endpoint: 
+            endpoint: ${{secrets.ENDPOINT}}
             # `true` to identify the endpoint is your custom domain.
-            cname: # optional, default is false
-            # `true` to skip setting static pages related configuration. `indexPage`, `notFoundPage` will not be used.
-            skipSetting: # optional, default is false
-            # Save info of uploaded files to increase next upload speed
-            incremental: # optional, default is true
-            # index page
-            indexPage: # optional, default is index.html
-            # not found page
-            notFoundPage: # optional, default is 404.html
-            # Cache-Control for HTML
-            htmlCacheControl: # optional, default is no-cache
-            # Cache-Control for image
-            imageCacheControl: # optional, default is max-age=864000
-            # Cache-Control for PDF
-            pdfCacheControl: # optional, default is max-age=2592000
-            # Cache-Control for other files
-            otherCacheControl: # optional, default is max-age=2592000
-                  
+            cname: ${{secrets.CNAME}}
           
